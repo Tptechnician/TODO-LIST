@@ -3,7 +3,7 @@ export default function TodoItem() {
     <div className="todoItem">
       <div className="todoItem__wraper">
         <input className="todoItem__checkbox" type="checkbox" />
-        <h2 className="todoItem__title">Задачаsdfsdsfdfdsdfdssdsdsdsdsd</h2>
+        <h2 className="todoItem__title">Задача</h2>
       </div>
       <div className="todoItem__buttons">
         <button className="todoItem__editButton"></button>

@@ -1,1 +1,5 @@
-export const todoItemDatabase: Array<1> = [];
+interface Item {
+  title: string;
+}
+
+export const todoItemDatabase: Array<Item> = [];
