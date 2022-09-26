@@ -1,8 +1,8 @@
 export default function Form() {
   return (
-    <form>
-      <input type="text" placeholder="Введите задачу" />
-      <button type="submit">Добавить задачу</button>
+    <form className="form">
+      <input className="form__input" type="text" placeholder="Введите задачу" />
+      <button className="form__button" type="submit"></button>
     </form>
   );
 }

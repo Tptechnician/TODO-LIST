@@ -1,2 +1,13 @@
 $fontSizeTitle: 48px;
 $fontSizeItem: 24px;
+$fontColor: white;
+
+%button-type {
+  background: {
+    color: black;
+    position: center;
+    repeat: no-repeat;
+  }
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+}
