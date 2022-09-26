@@ -1,1 +1,1 @@
-export const todoItemDatabase = [];
+export const todoItemDatabase: Array<1> = [];

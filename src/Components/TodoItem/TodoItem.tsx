@@ -1,10 +1,14 @@
 export default function TodoItem() {
   return (
     <div className="todoItem">
-      <input type="checkbox" className="" />
-      <h2>Задача1</h2>
-      <button className="todoItem__editButton">Редактировать</button>
-      <button className="todoItem__deleteButton">Удалить</button>
+      <div className="todoItem__wraper">
+        <input className="todoItem__checkbox" type="checkbox" />
+        <h2 className="todoItem__title">Задачаsdfsdsfdfdsdfdssdsdsdsdsd</h2>
+      </div>
+      <div className="todoItem__buttons">
+        <button className="todoItem__editButton"></button>
+        <button className="todoItem__deleteButton"></button>
+      </div>
     </div>
   );
 }

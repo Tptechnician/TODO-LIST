@@ -1,6 +1,7 @@
 $fontSizeTitle: 48px;
 $fontSizeItem: 24px;
 $fontColor: white;
+$buttonOpacity: 80%;
 
 %button-type {
   background: {
@@ -10,4 +11,5 @@ $fontColor: white;
   }
   border: 2px solid #ffffff;
   border-radius: 2px;
+  cursor: pointer;
 }

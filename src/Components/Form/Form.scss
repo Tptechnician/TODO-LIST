@@ -1,10 +1,10 @@
 @import '../../variables';
 
 .form {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
   &__input {
     width: 80%;
@@ -18,5 +18,8 @@
     width: 55px;
     height: 40px;
     cursor: pointer;
+  }
+  &__button:hover {
+    opacity: $buttonOpacity;
   }
 }

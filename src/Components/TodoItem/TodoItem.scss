@@ -1,0 +1,58 @@
+@import '../../variables';
+
+.todoItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__wraper {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    gap: 10px;
+  }
+
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  &__title {
+    max-width: 520px;
+    font-size: $fontSizeItem;
+    color: $fontColor;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__buttons {
+    display: flex;
+    padding-left: 10px;
+    gap: 10px;
+  }
+
+  &__editButton {
+    background-image: url(../../images/editing-button.svg);
+    @extend %button-type;
+    width: 27px;
+    height: 27px;
+  }
+
+  &__editButton:hover {
+    opacity: $buttonOpacity;
+  }
+
+  &__deleteButton {
+    background-image: url(../../images/delete-button.svg);
+    @extend %button-type;
+    width: 27px;
+    height: 27px;
+  }
+
+  &__deleteButton:hover {
+    opacity: $buttonOpacity;
+  }
+}
