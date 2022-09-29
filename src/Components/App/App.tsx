@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
+import nextId from 'react-id-generator';
+
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import TodoConteiner from '../TodoConteiner/TodoConteiner';
 import Footer from '../Footer/footer';
-import { todoItemDatabase } from '../../Database/Database';
-console.log(todoItemDatabase);
+
+interface Item {
+  item: {
+    _id: string;
+    title: string;
+    made: boolean;
+  };
+}
 
 function App() {
-  function addTodoItem(value: { title: string }) {
-    todoItemDatabase.unshift(value);
+  const [itemData, setItemData] = useState<Item[]>([]);
+  console.log(itemData);
 
-    console.log(todoItemDatabase);
+  function addTodoItem(item: any) {
+    const id = nextId();
+    item = { ...item, _id: id, made: false };
+    setItemData([item, ...itemData]);
   }
   return (
     <>
       <Header />
       <Form addTodoItem={addTodoItem} />
-      <TodoConteiner />
+      <TodoConteiner tasks={itemData} />
       <Footer />
     </>
   );
