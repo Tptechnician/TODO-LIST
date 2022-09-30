@@ -23,6 +23,8 @@ function App() {
     item = { ...item, _id: id, made: false };
     setItemData([item, ...itemData]);
   }
+
+  function deleteItem() {}
   return (
     <>
       <Header />
