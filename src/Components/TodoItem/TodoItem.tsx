@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react-lite';
 import todo from '../../Store/TodoStore';
 
 interface TodoItemProps {
