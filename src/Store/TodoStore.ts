@@ -28,6 +28,12 @@ class TodoStore {
   removeTodo(id: string) {
     this.todoStore = this.todoStore.filter((task) => id !== task._id);
   }
+
+  completedTodo(id: string) {
+    this.todoStore = this.todoStore.map((task) =>
+      task._id === id ? { ...task, made: !task.made } : task,
+    );
+  }
 }
 
 export default new TodoStore();

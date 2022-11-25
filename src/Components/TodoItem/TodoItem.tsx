@@ -15,12 +15,14 @@ const TodoItem = ({ title, made, _id }: TodoItemProps) => {
           className="todoItem__checkbox"
           type="checkbox"
           checked={made}
-          onChange={taskCompleted}
+          onChange={() => {
+            todo.completedTodo(_id);
+          }}
         />
         <h2 className="todoItem__title">{title}</h2>
       </div>
       <div className="todoItem__buttons">
-        <button className="todoItem__editButton"></button>
+        <button className="todoItem__editButton" />
         <button
           className="todoItem__deleteButton"
           onClick={() => {
