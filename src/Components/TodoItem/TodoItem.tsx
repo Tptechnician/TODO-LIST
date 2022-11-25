@@ -7,7 +7,6 @@ interface TodoItemProps {
 }
 
 const TodoItem = ({ title, made, _id }: TodoItemProps) => {
-  function taskCompleted() {}
   return (
     <li className="todoItem">
       <div className="todoItem__wraper">
