@@ -1,10 +1,7 @@
 import { useState } from 'react';
+import todo from '../../Store/TodoStore';
 
-interface formProps {
-  addTodoItem: (item: any) => void;
-}
-
-export default function Form({ addTodoItem }: formProps) {
+export default function Form() {
   const [value, setValue] = useState<any>({});
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -14,7 +11,7 @@ export default function Form({ addTodoItem }: formProps) {
 
   function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-    addTodoItem(value);
+    todo.addTodo(value.title);
     setValue({});
   }
 

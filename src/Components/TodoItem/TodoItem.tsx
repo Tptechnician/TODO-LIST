@@ -1,20 +1,36 @@
+import { observer } from 'mobx-react-lite';
+import todo from '../../Store/TodoStore';
+
 interface TodoItemProps {
+  _id: string;
   title: string;
   made: boolean;
 }
 
-export default function TodoItem({ title, made }: TodoItemProps) {
+const TodoItem = ({ title, made, _id }: TodoItemProps) => {
   function taskCompleted() {}
   return (
     <li className="todoItem">
       <div className="todoItem__wraper">
-        <input className="todoItem__checkbox" type="checkbox" onClick={taskCompleted} />
+        <input
+          className="todoItem__checkbox"
+          type="checkbox"
+          checked={made}
+          onChange={taskCompleted}
+        />
         <h2 className="todoItem__title">{title}</h2>
       </div>
       <div className="todoItem__buttons">
         <button className="todoItem__editButton"></button>
-        <button className="todoItem__deleteButton"></button>
+        <button
+          className="todoItem__deleteButton"
+          onClick={() => {
+            todo.removeTodo(_id);
+          }}
+        />
       </div>
     </li>
   );
-}
+};
+
+export default TodoItem;
