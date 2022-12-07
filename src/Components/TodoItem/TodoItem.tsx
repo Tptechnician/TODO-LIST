@@ -1,4 +1,5 @@
 import todo from '../../Store/TodoStore';
+import './TodoItem.scss';
 
 interface TodoItemProps {
   _id: string;

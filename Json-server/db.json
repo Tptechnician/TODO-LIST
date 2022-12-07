@@ -7,32 +7,45 @@
       "password": "123456"
     },
     {
-      "id": 2,
-      "name": "admin2",
-      "email": "admin2@email.ru",
-      "password": "123456"
-    },
-    {
-      "id": 3,
-      "name": "admin3",
-      "email": "admin3@email.ru",
-      "password": "123456"
-    },
-    {
-      "id": 4,
-      "name": "admin4",
-      "email": "admin4@email.ru",
-      "password": "123456"
-    },
-    {
-      "name": "admin4",
-      "password": "123456",
-      "id": 5
-    },
-    {
-      "name": "Павел",
+      "name": "павел",
       "password": "123456",
       "id": 6
+    },
+    {
+      "name": "анастасия",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "name": "лиза",
+      "password": "123",
+      "id": 8
+    }
+  ],
+  "todos": [
+    {
+      "made": true,
+      "title": "Задача анастасия",
+      "autor": "анастасия",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "Задача павел",
+      "made": false,
+      "autor": "павел"
+    },
+    {
+      "id": "4",
+      "title": "Задача павел Задача павел",
+      "made": false,
+      "autor": "павел"
+    },
+    {
+      "id": "3",
+      "title": "Задача анастасия",
+      "made": false,
+      "autor": "анастасия"
     }
   ]
 }

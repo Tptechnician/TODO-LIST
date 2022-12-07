@@ -1,37 +1,41 @@
 import { makeAutoObservable } from 'mobx';
 import nextId from 'react-id-generator';
+import todoApi from '../utils/TodoApi';
 
 interface Item {
   task: {
-    _id: string;
+    id: string;
     title: string;
     made: boolean;
   };
 }
+
 class TodoStore {
-  todoStore: Array<Item['task']> = [
-    { _id: '1', title: 'Задача 1', made: true },
-    { _id: '2', title: 'Задача 2', made: false },
-    { _id: '3', title: 'Задача 3', made: false },
-  ];
+  todoStore: Array<Item['task']> = [];
 
   constructor() {
     makeAutoObservable(this);
   }
 
+  getTodos(user: string) {
+    todoApi.getTodos(user).then((todos) => {
+      this.todoStore.unshift(...todos);
+    });
+  }
+
   addTodo(title: string) {
     const id = nextId();
-    const item = { _id: id, title: title, made: false };
+    const item = { id: id, title: title, made: false };
     this.todoStore.unshift(item);
   }
 
   removeTodo(id: string) {
-    this.todoStore = this.todoStore.filter((task) => id !== task._id);
+    this.todoStore = this.todoStore.filter((task) => id !== task.id);
   }
 
   completedTodo(id: string) {
     this.todoStore = this.todoStore.map((task) =>
-      task._id === id ? { ...task, made: !task.made } : task,
+      task.id === id ? { ...task, made: !task.made } : task,
     );
   }
 }

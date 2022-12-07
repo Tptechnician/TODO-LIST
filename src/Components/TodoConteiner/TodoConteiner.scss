@@ -1,11 +1,17 @@
-.TodoConteiner {
-  padding: 0;
-  list-style: none;
-  max-width: 60%;
-  min-height: 74vh;
-  margin: 25px auto 20px;
+.todo {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  margin: 25px auto 20px;
+  min-height: 74vh;
+
+  &__conteiner {
+    padding: 0;
+    max-width: 60%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+  }
 }
