@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from '../../Hooks/useForm';
 import Form from '../Form/Form';
 import FormInput from '../Form/FormInput/FormInput';
+import UserStore from '../../Store/UserStore';
 
 const configurationInput = {
   name: {
@@ -37,7 +38,7 @@ function Register() {
 
   function handleSubmit(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
-    //  onSubmit(values);
+    UserStore.register(values);
     resetForm();
   }
 
@@ -65,13 +66,6 @@ function Register() {
           nameInput="name"
           handleChange={handleChange}
           config={configurationInput.name}
-          styleConfig={styleConfig}
-        />
-        <FormInput
-          title="E-mail"
-          value={values.email}
-          nameInput="email"
-          handleChange={handleChange}
           styleConfig={styleConfig}
         />
         <FormInput

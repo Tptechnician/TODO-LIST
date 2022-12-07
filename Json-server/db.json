@@ -23,6 +23,16 @@
       "name": "admin4",
       "email": "admin4@email.ru",
       "password": "123456"
+    },
+    {
+      "name": "admin4",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "name": "Павел",
+      "password": "123456",
+      "id": 6
     }
   ]
 }
