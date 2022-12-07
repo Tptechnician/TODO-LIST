@@ -1,7 +1,14 @@
-@import url(./vendor/normalize.scss);
-@import url(./Components/App/App.scss);
-@import url(./Components/Header/Header.scss);
-@import url(./Components/Form/Form.scss);
-@import url(./Components/TodoConteiner/TodoConteiner.scss);
-@import url(./Components/TodoItem/TodoItem.scss);
-@import url(./Components/Footer/Footer.scss);
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+
+body {
+  background: #202020;
+  margin: 0 auto;
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}

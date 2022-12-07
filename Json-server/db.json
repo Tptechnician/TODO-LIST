@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@email.ru",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "admin2",
+      "email": "admin2@email.ru",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "name": "admin3",
+      "email": "admin3@email.ru",
+      "password": "123456"
+    },
+    {
+      "id": 4,
+      "name": "admin4",
+      "email": "admin4@email.ru",
+      "password": "123456"
+    }
+  ]
+}

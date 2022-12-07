@@ -1,31 +1,42 @@
-import { useState } from 'react';
-import todo from '../../Store/TodoStore';
+import React from 'react';
+import './Form.scss';
 
-export default function Form() {
-  const [value, setValue] = useState<any>({});
+interface FormProps {
+  title: string;
+  name: string;
+  onSubmit: (e: any) => void;
+  buttonText: string;
+  linkAuthorization: JSX.Element;
+  styleConfig: {
+    title: string;
+    formConteiner: string;
+    button: string;
+    buttonActive: string;
+  };
+  children: React.ReactNode;
+}
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value } = e.target;
-    setValue({ [name]: value });
-  }
-
-  function handleSubmit(e: React.ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-    todo.addTodo(value.title);
-    setValue({});
-  }
-
+function Form({
+  title,
+  name,
+  onSubmit,
+  buttonText,
+  linkAuthorization,
+  styleConfig,
+  children,
+}: FormProps) {
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <input
-        className="form__input"
-        value={value.title || ''}
-        type="text"
-        placeholder="Введите задачу"
-        name="title"
-        onChange={handleChange}
-      />
-      <button className="form__button" type="submit"></button>
-    </form>
+    <section className={`${styleConfig.formConteiner}`}>
+      <h3 className={`${styleConfig.title}`}>{title}</h3>
+      <form className="form authForm" name={name} noValidate>
+        {children}
+        <button className={`${styleConfig.button}`} type="button" onClick={onSubmit}>
+          {buttonText}
+        </button>
+        {linkAuthorization}
+      </form>
+    </section>
   );
 }
+
+export default Form;
