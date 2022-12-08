@@ -29,6 +29,25 @@ class TodoApi {
       headers: this._headers,
     }).then(this._getResponseData);
   }
+
+  deleteTodo(id: string) {
+    return fetch(`http://localhost:3001/todos/${id}`, {
+      method: 'DELETE',
+      headers: this._headers,
+    }).then(this._getResponseData);
+  }
+
+  completeTodo(id: string, made: boolean, title: string, autor: string) {
+    return fetch(`http://localhost:3001/todos/${id}`, {
+      method: 'PUT',
+      headers: this._headers,
+      body: JSON.stringify({
+        made: !made,
+        title: title,
+        autor: autor,
+      }),
+    }).then(this._getResponseData);
+  }
 }
 
 const todoApi = new TodoApi({

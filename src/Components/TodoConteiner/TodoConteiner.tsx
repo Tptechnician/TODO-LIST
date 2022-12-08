@@ -8,9 +8,16 @@ const TodoConteiner = observer(() => {
     <main className="todo">
       <ul className="todo__conteiner">
         {todo.todoStore.map((task) => (
-          <TodoItem key={task.id} title={task.title} made={task.made} _id={task.id} />
+          <TodoItem
+            key={task.id}
+            title={task.title}
+            made={task.made}
+            _id={task.id}
+            autor={task.autor}
+          />
         ))}
       </ul>
+      <button className="todo__add-button">Добавить задачу</button>
     </main>
   );
 });

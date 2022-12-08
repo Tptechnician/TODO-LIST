@@ -9,19 +9,6 @@ class UserStore {
     makeAutoObservable(this);
   }
 
-  /* register(newUser: any) {
-    return fetch(`http://localhost:3001/users`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: newUser.name.toLowerCase(),
-        password: newUser.password,
-      }),
-    });
-  } */
-
   register(newUser: any) {
     userApi.register(newUser);
   }

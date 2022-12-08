@@ -24,28 +24,28 @@
   ],
   "todos": [
     {
-      "made": true,
+      "made": false,
       "title": "Задача анастасия",
       "autor": "анастасия",
       "id": "1"
     },
     {
-      "id": "2",
-      "title": "Задача павел",
-      "made": false,
-      "autor": "павел"
-    },
-    {
-      "id": "4",
-      "title": "Задача павел Задача павел",
-      "made": false,
-      "autor": "павел"
-    },
-    {
-      "id": "3",
+      "made": true,
       "title": "Задача анастасия",
-      "made": false,
+      "id": "2",
       "autor": "анастасия"
+    },
+    {
+      "made": false,
+      "title": "Задача павел",
+      "autor": "павел",
+      "id": "4"
+    },
+    {
+      "made": false,
+      "title": "Задача павел",
+      "autor": "павел",
+      "id": "3"
     }
   ]
 }
