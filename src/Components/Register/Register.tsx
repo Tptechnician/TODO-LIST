@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useForm } from '../../Hooks/useForm';
 import Form from '../Form/Form';
 import FormInput from '../Form/FormInput/FormInput';
-import UserStore from '../../Store/UserStore';
 
 const configurationInput = {
   name: {
@@ -33,12 +32,16 @@ interface useForms {
   handleChange?: (e: any) => void;
 }
 
-function Register() {
+interface Auth {
+  onSubmit: (newUser: object) => void;
+}
+
+function Register({ onSubmit }: Auth) {
   const { values, resetForm, handleChange }: useForms = useForm();
 
   function handleSubmit(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
-    UserStore.register(values);
+    onSubmit(values);
     resetForm();
   }
 

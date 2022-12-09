@@ -4,10 +4,10 @@ import Form from '../Form/Form';
 import FormInput from '../Form/FormInput/FormInput';
 import { useForm } from '../../Hooks/useForm';
 import todo from '../../Store/TodoStore';
-import user from '../../Store/UserStore';
 
 interface PopupProps {
   isOpen: boolean;
+  currentUser: string;
   onTogglePopup: () => void;
 }
 
@@ -34,13 +34,13 @@ const styleConfig = {
   button: 'form__button form__button__popup',
 };
 
-function Popup({ isOpen, onTogglePopup }: PopupProps) {
+function Popup({ isOpen, onTogglePopup, currentUser }: PopupProps) {
   const { values, resetForm, handleChange }: useForms = useForm();
 
   function handleSubmit(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
     if (values.newTodo) {
-      todo.addTodo(user.currentUser, values.newTodo);
+      todo.addTodo(currentUser, values.newTodo);
       onTogglePopup();
       resetForm();
     }

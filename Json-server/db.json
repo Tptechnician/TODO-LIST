@@ -8,7 +8,7 @@
     },
     {
       "name": "павел",
-      "password": "123456",
+      "password": "1",
       "id": 6
     },
     {
@@ -20,11 +20,21 @@
       "name": "лиза",
       "password": "123",
       "id": 8
+    },
+    {
+      "name": "tptechnician",
+      "password": "1",
+      "id": 9
+    },
+    {
+      "name": "user",
+      "password": "2",
+      "id": 10
     }
   ],
   "todos": [
     {
-      "made": false,
+      "made": true,
       "title": "Задача анастасия",
       "autor": "анастасия",
       "id": "1"
@@ -36,7 +46,7 @@
       "autor": "анастасия"
     },
     {
-      "made": false,
+      "made": true,
       "title": "Задача анастасия",
       "autor": "анастасия",
       "id": "akSeqK7"
@@ -76,6 +86,30 @@
       "title": "zadacha pavelвываываываываыавыа",
       "autor": "павел",
       "id": "6N4haKw"
+    },
+    {
+      "made": false,
+      "title": "zadacha pavel",
+      "autor": "павел",
+      "id": "Dr_MDFM"
+    },
+    {
+      "made": false,
+      "title": "zadacha anastasiya",
+      "autor": "анастасия",
+      "id": "SOfuMCf"
+    },
+    {
+      "made": false,
+      "title": "zadacha user",
+      "autor": "user",
+      "id": "oSOEArr"
+    },
+    {
+      "made": false,
+      "title": "zadacha n",
+      "autor": "анастасия",
+      "id": "R7SrxZp"
     }
   ]
 }

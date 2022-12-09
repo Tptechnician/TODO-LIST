@@ -5,9 +5,10 @@ import { observer } from 'mobx-react-lite';
 
 interface TodoConteinerProps {
   onTogglePopup: () => void;
+  loginOut: () => void;
 }
 
-const TodoConteiner = observer(({ onTogglePopup }: TodoConteinerProps) => {
+const TodoConteiner = observer(({ onTogglePopup, loginOut }: TodoConteinerProps) => {
   return (
     <main className="todo">
       <button className="todo__add-button" type="button" onClick={onTogglePopup}>
@@ -24,6 +25,9 @@ const TodoConteiner = observer(({ onTogglePopup }: TodoConteinerProps) => {
           />
         ))}
       </ul>
+      <button className="todo__login-out" type="button" onClick={loginOut}>
+        Выйти из аккаунта
+      </button>
     </main>
   );
 });

@@ -23,12 +23,17 @@ class TodoStore {
     });
   }
 
+  clearTodoStore() {
+    this.todoStore = [];
+    if (!this.todoStore.length) {
+      return 'storeClear';
+    }
+  }
+
   addTodo(autor: string, title: string) {
     todoApi.addTodo(autor, title).then((task) => {
       this.todoStore.unshift(task);
     });
-    /* const item = { id: id, title: title, made: false };
-    this.todoStore.unshift(item); */
   }
 
   removeTodo(id: string) {

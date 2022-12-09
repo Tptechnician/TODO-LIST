@@ -1,10 +1,9 @@
 import React from 'react';
 import './Login.scss';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useForm } from '../../Hooks/useForm';
 import Form from '../Form/Form';
 import FormInput from '../Form/FormInput/FormInput';
-import UserStore from '../../Store/UserStore';
 
 const configurationInput = {
   name: {
@@ -33,18 +32,16 @@ interface useForms {
   handleChange?: (e: any) => void;
 }
 
-function Login({ login }: any) {
-  const history = useHistory();
+interface Auth {
+  onSubmit: (user: object) => void;
+}
+
+function Login({ onSubmit }: Auth) {
   const { values, resetForm, handleChange }: useForms = useForm();
 
-  function handleSubmit(e: React.ChangeEvent<HTMLInputElement>) {
+  async function handleSubmit(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
-    UserStore.login(values);
-    if (localStorage.getItem('login')) {
-      login(true);
-      history.push('/');
-    }
-
+    onSubmit(values);
     resetForm();
   }
 
