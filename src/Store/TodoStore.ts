@@ -48,11 +48,23 @@ class TodoStore {
     });
   }
 
-  /* completedTodo(id: string) {
-    this.todoStore = this.todoStore.map((task) =>
-      task.id === id ? { ...task, made: !task.made } : task,
-    );
-  } */
+  filterTodo(mode: string, currentUser: string) {
+    if (mode === 'all') {
+      todoApi.filterTodo('', currentUser).then((todos) => {
+        this.todoStore = todos;
+      });
+    }
+    if (mode === 'done') {
+      todoApi.filterTodo('&made=true', currentUser).then((todos) => {
+        this.todoStore = todos;
+      });
+    }
+    if (mode === 'undone') {
+      todoApi.filterTodo('&made=false', currentUser).then((todos) => {
+        this.todoStore = todos;
+      });
+    }
+  }
 }
 
 export default new TodoStore();

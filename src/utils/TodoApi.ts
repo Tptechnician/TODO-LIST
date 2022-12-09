@@ -60,6 +60,39 @@ class TodoApi {
       }),
     }).then(this._getResponseData);
   }
+
+  filterTodo(mode: string, currentUser: string) {
+    return fetch(`${this._url}/todos?autor=${currentUser}${mode}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(this._getResponseData);
+    /* if (mode === 'all') {
+      return fetch(`${this._url}/todos?autor=${currentUser}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).then(this._getResponseData);
+    }
+    if (mode === 'done') {
+      return fetch(`${this._url}/todos?autor=${currentUser}&made=true`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).then(this._getResponseData);
+    }
+    if (mode === 'undone') {
+      return fetch(`${this._url}/todos?autor=${currentUser}&made=false`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).then(this._getResponseData);
+    } */
+  }
 }
 
 const todoApi = new TodoApi({

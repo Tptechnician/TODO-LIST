@@ -46,7 +46,6 @@ function App() {
 
   function handleloginOut() {
     const todoClear = todo.clearTodoStore();
-    console.log(currentUser === '', todoClear === 'storeClear');
     if (todoClear === 'storeClear') {
       setCurrentUser('');
       localStorage.removeItem('login');
@@ -71,6 +70,7 @@ function App() {
           loggedIn={loggedIn}
           onTogglePopup={onTogglePopup}
           loginOut={handleloginOut}
+          currentUser={currentUser}
         />
       </Switch>
       <Footer />
