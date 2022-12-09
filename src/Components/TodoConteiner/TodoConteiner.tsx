@@ -3,9 +3,16 @@ import TodoItem from '../TodoItem/TodoItem';
 import todo from '../../Store/TodoStore';
 import { observer } from 'mobx-react-lite';
 
-const TodoConteiner = observer(() => {
+interface TodoConteinerProps {
+  onTogglePopup: () => void;
+}
+
+const TodoConteiner = observer(({ onTogglePopup }: TodoConteinerProps) => {
   return (
     <main className="todo">
+      <button className="todo__add-button" type="button" onClick={onTogglePopup}>
+        Добавить задачу
+      </button>
       <ul className="todo__conteiner">
         {todo.todoStore.map((task) => (
           <TodoItem
@@ -17,7 +24,6 @@ const TodoConteiner = observer(() => {
           />
         ))}
       </ul>
-      <button className="todo__add-button">Добавить задачу</button>
     </main>
   );
 });

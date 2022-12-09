@@ -5,7 +5,6 @@ import { useForm } from '../../Hooks/useForm';
 import Form from '../Form/Form';
 import FormInput from '../Form/FormInput/FormInput';
 import UserStore from '../../Store/UserStore';
-import todo from '../../Store/TodoStore';
 
 const configurationInput = {
   name: {

@@ -6,12 +6,12 @@ interface FormProps {
   name: string;
   onSubmit: (e: any) => void;
   buttonText: string;
-  linkAuthorization: JSX.Element;
+  linkAuthorization?: JSX.Element;
   styleConfig: {
     title: string;
     formConteiner: string;
     button: string;
-    buttonActive: string;
+    buttonActive?: string;
   };
   children: React.ReactNode;
 }

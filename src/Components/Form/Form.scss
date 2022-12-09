@@ -22,6 +22,10 @@
     line-height: 29px;
     color: $fontColor;
     text-align: center;
+
+    &__popup {
+      margin: 0 0 40px 0;
+    }
   }
 
   &__button {
@@ -41,6 +45,10 @@
     outline: none;
     border: none;
 
+    &__popup {
+      margin: 20px 0 0;
+    }
+
     &_login {
       margin: 197px 0 0;
     }
@@ -59,14 +67,17 @@
       line-height: 16px;
     }
   }
+
   &__button:hover {
     cursor: pointer;
     opacity: $buttonOpacity;
   }
+
   &__button__login-out:hover {
     cursor: pointer;
     opacity: $buttonOpacity;
   }
+
   &__paragraph {
     margin: 17px 0 0;
     padding: 0;
@@ -77,6 +88,7 @@
     line-height: 17px;
     text-align: center;
   }
+
   &__link {
     text-decoration: none;
     color: #4285f4;
@@ -87,6 +99,7 @@
     padding: 0;
     margin: 0 0 0 3px;
   }
+
   &__link:hover {
     opacity: $buttonOpacity;
   }

@@ -24,21 +24,33 @@ class TodoApi {
   }
 
   getTodos(autor: string) {
-    return fetch(`http://localhost:3001/todos?autor=${autor}`, {
+    return fetch(`${this._url}/todos?autor=${autor}`, {
       method: 'GET',
       headers: this._headers,
     }).then(this._getResponseData);
   }
 
+  addTodo(autor: string, title: string) {
+    return fetch(`${this._url}/todos/`, {
+      method: 'POST',
+      headers: this._headers,
+      body: JSON.stringify({
+        made: false,
+        title: title,
+        autor: autor,
+      }),
+    }).then(this._getResponseData);
+  }
+
   deleteTodo(id: string) {
-    return fetch(`http://localhost:3001/todos/${id}`, {
+    return fetch(`${this._url}/todos/${id}`, {
       method: 'DELETE',
       headers: this._headers,
     }).then(this._getResponseData);
   }
 
   completeTodo(id: string, made: boolean, title: string, autor: string) {
-    return fetch(`http://localhost:3001/todos/${id}`, {
+    return fetch(`${this._url}/todos/${id}`, {
       method: 'PUT',
       headers: this._headers,
       body: JSON.stringify({
@@ -51,7 +63,7 @@ class TodoApi {
 }
 
 const todoApi = new TodoApi({
-  url: 'https://api.nomoreparties.co',
+  url: 'http://localhost:3001',
   headers: {
     'Content-Type': 'application/json',
   },

@@ -23,7 +23,10 @@ class TodoStore {
     });
   }
 
-  addTodo(title: string) {
+  addTodo(autor: string, title: string) {
+    todoApi.addTodo(autor, title).then((task) => {
+      this.todoStore.unshift(task);
+    });
     /* const item = { id: id, title: title, made: false };
     this.todoStore.unshift(item); */
   }
