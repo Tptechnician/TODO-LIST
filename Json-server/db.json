@@ -5,116 +5,20 @@
       "name": "admin",
       "email": "admin@email.ru",
       "password": "123456"
-    },
-    {
-      "name": "павел",
-      "password": "1",
-      "id": 6
-    },
-    {
-      "name": "анастасия",
-      "password": "123456",
-      "id": 7
-    },
-    {
-      "name": "лиза",
-      "password": "123",
-      "id": 8
-    },
-    {
-      "name": "tptechnician",
-      "password": "1",
-      "id": 9
-    },
-    {
-      "name": "user",
-      "password": "2",
-      "id": 10
-    },
-    {
-      "name": "павел",
-      "password": "1",
-      "id": 11
     }
   ],
   "todos": [
     {
       "made": true,
       "title": "Задача анастасия",
-      "autor": "анастасия",
+      "autor": "admin",
       "id": "1"
     },
     {
       "made": true,
       "title": "Задача анастасия",
       "id": "2",
-      "autor": "анастасия"
-    },
-    {
-      "made": true,
-      "title": "Задача анастасия",
-      "autor": "анастасия",
-      "id": "akSeqK7"
-    },
-    {
-      "made": false,
-      "title": "Задача павел",
-      "autor": "павел",
-      "id": "EYUw-M2"
-    },
-    {
-      "made": false,
-      "title": "zadacha pavelвываываываываыавыа",
-      "autor": "павел",
-      "id": "6N4haKw"
-    },
-    {
-      "made": false,
-      "title": "zadacha anastasiya",
-      "autor": "анастасия",
-      "id": "SOfuMCf"
-    },
-    {
-      "made": false,
-      "title": "zadacha user",
-      "autor": "user",
-      "id": "oSOEArr"
-    },
-    {
-      "made": false,
-      "title": "zadacha n",
-      "autor": "анастасия",
-      "id": "R7SrxZp"
-    },
-    {
-      "made": false,
-      "title": "zadacha pavel",
-      "autor": "павел",
-      "id": "hwRhMNv"
-    },
-    {
-      "made": true,
-      "title": "zadacha pavel",
-      "autor": "павел",
-      "id": "t7pEnrF"
-    },
-    {
-      "made": true,
-      "title": "zadacha pavel",
-      "autor": "павел",
-      "id": "aJUM43j"
-    },
-    {
-      "made": true,
-      "title": "zadacha pavel",
-      "autor": "павел",
-      "id": "lYTJ--8"
-    },
-    {
-      "made": false,
-      "title": "zadacha pavel",
-      "autor": "павел",
-      "id": "9yJiJG4"
+      "autor": "admin"
     }
   ]
 }
