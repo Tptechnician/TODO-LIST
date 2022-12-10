@@ -1,20 +1,6 @@
 import React from 'react';
 import './FormInput.scss';
-
-interface inputProps {
-  title: string;
-  nameInput: string;
-  handleChange: (e: any) => void;
-  value: string;
-  styleConfig: {
-    inputWraper: string;
-    inputTitle: string;
-    input: string;
-  };
-  config?: {
-    type: string;
-  };
-}
+import inputProps from '../../../interfaces/interfaces';
 
 function FormInput({ title, value, nameInput, handleChange, config, styleConfig }: inputProps) {
   return (

@@ -1,20 +1,6 @@
 import React from 'react';
 import './Form.scss';
-
-interface FormProps {
-  title: string;
-  name: string;
-  onSubmit: (e: any) => void;
-  buttonText: string;
-  linkAuthorization?: JSX.Element;
-  styleConfig: {
-    title: string;
-    formConteiner: string;
-    button: string;
-    buttonActive?: string;
-  };
-  children: React.ReactNode;
-}
+import { FormProps } from '../../interfaces/interfaces';
 
 function Form({
   title,

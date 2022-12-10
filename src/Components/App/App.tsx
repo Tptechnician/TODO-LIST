@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import Header from '../Header/Header';
 import TodoConteiner from '../TodoConteiner/TodoConteiner';
@@ -15,8 +15,6 @@ function App() {
   const [loggedIn, setLoggedin] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const history = useHistory();
-  console.log(loggedIn);
-  console.log(currentUser);
 
   function onTogglePopup() {
     setIsPopupOpen(!isPopupOpen);
@@ -53,6 +51,10 @@ function App() {
       history.push('/signin');
     }
   }
+
+  useEffect(() => {
+    localStorage.removeItem('login');
+  }, []);
 
   return (
     <>

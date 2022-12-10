@@ -1,16 +1,8 @@
-interface Data {
-  url: string;
-  headers: {
-    [key: string]: string;
-  };
-}
-
-interface TodoApi {
-  _url: string;
-  _headers: { [key: string]: string };
-}
+import { Data } from '../interfaces/interfaces';
 
 class TodoApi {
+  _url: string;
+  _headers: { [key: string]: string };
   constructor(data: Data) {
     this._url = data.url;
     this._headers = data.headers;
@@ -68,30 +60,6 @@ class TodoApi {
         'Content-Type': 'application/json',
       },
     }).then(this._getResponseData);
-    /* if (mode === 'all') {
-      return fetch(`${this._url}/todos?autor=${currentUser}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }).then(this._getResponseData);
-    }
-    if (mode === 'done') {
-      return fetch(`${this._url}/todos?autor=${currentUser}&made=true`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }).then(this._getResponseData);
-    }
-    if (mode === 'undone') {
-      return fetch(`${this._url}/todos?autor=${currentUser}&made=false`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }).then(this._getResponseData);
-    } */
   }
 }
 

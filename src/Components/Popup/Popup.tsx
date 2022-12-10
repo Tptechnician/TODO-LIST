@@ -4,26 +4,8 @@ import Form from '../Form/Form';
 import FormInput from '../Form/FormInput/FormInput';
 import { useForm } from '../../Hooks/useForm';
 import todo from '../../Store/TodoStore';
-
-interface PopupProps {
-  isOpen: boolean;
-  currentUser: string;
-  onTogglePopup: () => void;
-}
-
-interface useForms {
-  values: {
-    [key: string]: string;
-  };
-  resetForm: () => void;
-  handleChange?: (e: any) => void;
-}
-
-const configurationInput = {
-  newTodo: {
-    type: 'text',
-  },
-};
+import { PopupProps, useForms } from '../../interfaces/interfaces';
+import { configurationInput } from '../../constants/constants';
 
 const styleConfig = {
   formConteiner: 'form__conteiner',

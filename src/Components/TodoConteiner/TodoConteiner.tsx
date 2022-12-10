@@ -3,40 +3,38 @@ import React from 'react';
 import './TodoConteiner.scss';
 import TodoItem from '../TodoItem/TodoItem';
 import todo from '../../Store/TodoStore';
+import { TodoConteinerProps } from '../../interfaces/interfaces';
 import { observer } from 'mobx-react-lite';
 
-interface TodoConteinerProps {
-  onTogglePopup: () => void;
-  loginOut: () => void;
-  currentUser: string;
-}
-
 const TodoConteiner = observer(({ onTogglePopup, loginOut, currentUser }: TodoConteinerProps) => {
-  function filterAll() {
-    todo.filterTodo('all', currentUser);
-  }
-  function filterTrue() {
-    todo.filterTodo('done', currentUser);
-  }
-  function filterFalse() {
-    todo.filterTodo('undone', currentUser);
+  function filter(e: React.ChangeEvent<HTMLSelectElement>) {
+    const value = e.target.value;
+
+    if (value === 'all') {
+      todo.filterTodo('all', currentUser);
+    }
+    if (value === 'done') {
+      todo.filterTodo('done', currentUser);
+    }
+    if (value === 'undone') {
+      todo.filterTodo('undone', currentUser);
+    }
   }
 
   return (
     <main className="todo">
-      <button className="todo__add-button" type="button" onClick={onTogglePopup}>
-        Добавить задачу
-      </button>
-      <div>
-        <button type="button" onClick={filterAll}>
-          Все
+      <div className="todo__wraper">
+        <button className="todo__add-button" type="button" onClick={onTogglePopup}>
+          Добавить задачу
         </button>
-        <button type="button" onClick={filterTrue}>
-          Выполненые
-        </button>
-        <button type="button" onClick={filterFalse}>
-          Не выполненые
-        </button>
+        <div className="todo__conteiner__filter">
+          <p className="todo__conteiner__filter__title">Фильтр:</p>
+          <select className="todo__conteiner__filter__select" onChange={filter}>
+            <option value="all">Все</option>
+            <option value="done">Выполненые</option>
+            <option value="undone">Не выполненые</option>
+          </select>
+        </div>
       </div>
       <ul className="todo__conteiner">
         {todo.todoStore.map((task) => (

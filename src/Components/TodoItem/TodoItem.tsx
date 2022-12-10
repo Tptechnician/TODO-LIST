@@ -1,12 +1,6 @@
 import todo from '../../Store/TodoStore';
 import './TodoItem.scss';
-
-interface TodoItemProps {
-  _id: string;
-  title: string;
-  made: boolean;
-  autor: string;
-}
+import { TodoItemProps } from '../../interfaces/interfaces';
 
 const TodoItem = ({ title, made, _id, autor }: TodoItemProps) => {
   return (
