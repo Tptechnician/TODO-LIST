@@ -1,3 +1,5 @@
+import React, { SetStateAction } from 'react';
+import { RouterChildContext } from 'react-router-dom';
 export interface FormProps {
   title: string;
   name: string;
@@ -37,19 +39,19 @@ export interface useForms {
 }
 
 export interface Auth {
-  onSubmit: (user: object) => void;
+  setLoggedin: React.Dispatch<SetStateAction<boolean>>;
+  history: RouterChildContext['router']['history'];
 }
 
 export interface PopupProps {
   isOpen: boolean;
-  currentUser: string;
   onTogglePopup: () => void;
 }
 
 export interface TodoConteinerProps {
   onTogglePopup: () => void;
-  loginOut: () => void;
-  currentUser: string;
+  setLoggedin: React.Dispatch<SetStateAction<boolean>>;
+  history: RouterChildContext['router']['history'];
 }
 
 export interface TodoItemProps {

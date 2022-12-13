@@ -5,13 +5,14 @@ import Form from '../Form/Form';
 import FormInput from '../Form/FormInput/FormInput';
 import { useForms, Auth } from '../../interfaces/interfaces';
 import { configurationInput, styleConfig } from '../../constants/constants';
+import UserStore from '../../Store/UserStore';
 
-function Login({ onSubmit }: Auth) {
+function Login({ setLoggedin, history }: Auth) {
   const { values, resetForm, handleChange }: useForms = useForm();
 
   function handleSubmit(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
-    onSubmit(values);
+    UserStore.authorization(values, setLoggedin, history);
     resetForm();
   }
 

@@ -6,13 +6,13 @@ import Form from '../Form/Form';
 import FormInput from '../Form/FormInput/FormInput';
 import { useForms, Auth } from '../../interfaces/interfaces';
 import { configurationInput, styleConfig } from '../../constants/constants';
-
-function Register({ onSubmit }: Auth) {
+import userStore from '../../Store/UserStore';
+function Register({ setLoggedin, history }: Auth) {
   const { values, resetForm, handleChange }: useForms = useForm();
 
   function handleSubmit(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
-    onSubmit(values);
+    userStore.registration(values, setLoggedin, history);
     resetForm();
   }
 

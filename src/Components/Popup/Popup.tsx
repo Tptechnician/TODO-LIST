@@ -6,6 +6,7 @@ import { useForm } from '../../Hooks/useForm';
 import todo from '../../Store/TodoStore';
 import { PopupProps, useForms } from '../../interfaces/interfaces';
 import { configurationInput } from '../../constants/constants';
+import UserStore from '../../Store/UserStore';
 
 const styleConfig = {
   formConteiner: 'form__conteiner',
@@ -16,13 +17,13 @@ const styleConfig = {
   button: 'form__button form__button__popup',
 };
 
-function Popup({ isOpen, onTogglePopup, currentUser }: PopupProps) {
+function Popup({ isOpen, onTogglePopup }: PopupProps) {
   const { values, resetForm, handleChange }: useForms = useForm();
 
   function handleSubmit(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
     if (values.newTodo) {
-      todo.addTodo(currentUser, values.newTodo);
+      todo.addTodo(UserStore.userStore, values.newTodo);
       onTogglePopup();
       resetForm();
     }

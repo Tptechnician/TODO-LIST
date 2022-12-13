@@ -5,20 +5,25 @@ import TodoItem from '../TodoItem/TodoItem';
 import todo from '../../Store/TodoStore';
 import { TodoConteinerProps } from '../../interfaces/interfaces';
 import { observer } from 'mobx-react-lite';
+import UserStore from '../../Store/UserStore';
 
-const TodoConteiner = observer(({ onTogglePopup, loginOut, currentUser }: TodoConteinerProps) => {
+const TodoConteiner = observer(({ onTogglePopup, setLoggedin, history }: TodoConteinerProps) => {
   function filter(e: React.ChangeEvent<HTMLSelectElement>) {
     const value = e.target.value;
 
     if (value === 'all') {
-      todo.filterTodo('all', currentUser);
+      todo.filterTodo('all', UserStore.userStore);
     }
     if (value === 'done') {
-      todo.filterTodo('done', currentUser);
+      todo.filterTodo('done', UserStore.userStore);
     }
     if (value === 'undone') {
-      todo.filterTodo('undone', currentUser);
+      todo.filterTodo('undone', UserStore.userStore);
     }
+  }
+
+  function loginOut() {
+    UserStore.loginOut(setLoggedin, history);
   }
 
   return (
