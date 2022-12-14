@@ -1,10 +1,10 @@
 import React from 'react';
 
 import './TodoConteiner.scss';
-import TodoItem from '../TodoItem/TodoItem';
-import todo from '../../Store/TodoStore';
-import { TodoConteinerProps } from '../../interfaces/interfaces';
 import { observer } from 'mobx-react-lite';
+import { TodoConteinerProps } from '../../interfaces/interfaces';
+import todo from '../../Store/TodoStore';
+import TodoItem from '../TodoItem/TodoItem';
 import UserStore from '../../Store/UserStore';
 
 const TodoConteiner = observer(({ onTogglePopup, setLoggedin, history }: TodoConteinerProps) => {

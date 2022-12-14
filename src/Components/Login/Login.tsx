@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from '../../Hooks/useForm';
-import Form from '../Form/Form';
-import FormInput from '../Form/FormInput/FormInput';
 import { useForms, Auth } from '../../interfaces/interfaces';
 import { configurationInput, styleConfig } from '../../constants/constants';
+import Form from '../Form/Form';
+import FormInput from '../Form/FormInput/FormInput';
 import UserStore from '../../Store/UserStore';
 
 function Login({ setLoggedin, history }: Auth) {

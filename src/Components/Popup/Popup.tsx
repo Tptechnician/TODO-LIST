@@ -3,19 +3,12 @@ import './Popup.scss';
 import Form from '../Form/Form';
 import FormInput from '../Form/FormInput/FormInput';
 import { useForm } from '../../Hooks/useForm';
-import todo from '../../Store/TodoStore';
-import { PopupProps, useForms } from '../../interfaces/interfaces';
+import { KeyboardEvent } from '../../interfaces/interfaces';
+import { styleConfigPopup } from '../../constants/constants';
 import { configurationInput } from '../../constants/constants';
+import { PopupProps, useForms } from '../../interfaces/interfaces';
+import todo from '../../Store/TodoStore';
 import UserStore from '../../Store/UserStore';
-
-const styleConfig = {
-  formConteiner: 'form__conteiner',
-  title: 'form__title form__title__popup',
-  inputWraper: 'form__input-wraper',
-  inputTitle: 'form__input-title',
-  input: 'form__input form__input__popup',
-  button: 'form__button form__button__popup',
-};
 
 function Popup({ isOpen, onTogglePopup }: PopupProps) {
   const { values, resetForm, handleChange }: useForms = useForm();
@@ -44,7 +37,7 @@ function Popup({ isOpen, onTogglePopup }: PopupProps) {
     }
   }
 
-  function handleEscClose(evt: any) {
+  function handleEscClose(evt: KeyboardEvent) {
     if (evt.key === 'Escape') {
       onTogglePopup();
     }
@@ -58,7 +51,7 @@ function Popup({ isOpen, onTogglePopup }: PopupProps) {
           name="addTodo"
           onSubmit={handleSubmit}
           buttonText="Добавить новую задачу"
-          styleConfig={styleConfig}
+          styleConfig={styleConfigPopup}
         >
           <FormInput
             title="Новая задача"
@@ -66,7 +59,7 @@ function Popup({ isOpen, onTogglePopup }: PopupProps) {
             nameInput="newTodo"
             handleChange={handleChange}
             config={configurationInput.newTodo}
-            styleConfig={styleConfig}
+            styleConfig={styleConfigPopup}
           />
         </Form>
       </div>

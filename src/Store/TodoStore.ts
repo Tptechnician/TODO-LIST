@@ -1,14 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import todoApi from '../utils/TodoApi';
-
-interface Item {
-  task: {
-    id: string;
-    title: string;
-    made: boolean;
-    autor: string;
-  };
-}
+import { Item } from '../interfaces/interfaces';
 
 class TodoStore {
   todoStore: Array<Item['task']> = [];

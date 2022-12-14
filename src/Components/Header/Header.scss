@@ -1,7 +1,11 @@
 @import '../../variables';
 
 .header {
+  margin: 20px 0 0 0;
+  padding: 0;
   &__title {
+    margin: 0;
+    padding: 0;
     text-align: center;
     font-size: $fontSizeTitle;
     color: $fontColor;

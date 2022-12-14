@@ -2,11 +2,12 @@ import React from 'react';
 import './Register.scss';
 import { Link } from 'react-router-dom';
 import { useForm } from '../../Hooks/useForm';
-import Form from '../Form/Form';
-import FormInput from '../Form/FormInput/FormInput';
 import { useForms, Auth } from '../../interfaces/interfaces';
 import { configurationInput, styleConfig } from '../../constants/constants';
+import Form from '../Form/Form';
+import FormInput from '../Form/FormInput/FormInput';
 import userStore from '../../Store/UserStore';
+
 function Register({ setLoggedin, history }: Auth) {
   const { values, resetForm, handleChange }: useForms = useForm();
 

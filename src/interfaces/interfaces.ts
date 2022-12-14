@@ -1,5 +1,6 @@
 import React, { SetStateAction } from 'react';
 import { RouterChildContext } from 'react-router-dom';
+
 export interface FormProps {
   title: string;
   name: string;
@@ -18,7 +19,7 @@ export interface FormProps {
 export default interface inputProps {
   title: string;
   nameInput: string;
-  handleChange: (e: any) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
   styleConfig: {
     inputWraper: string;
@@ -35,7 +36,7 @@ export interface useForms {
     [key: string]: string;
   };
   resetForm: () => void;
-  handleChange?: (e: any) => void;
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface Auth {
@@ -61,9 +62,22 @@ export interface TodoItemProps {
   autor: string;
 }
 
+export interface Item {
+  task: {
+    id: string;
+    title: string;
+    made: boolean;
+    autor: string;
+  };
+}
+
 export interface Data {
   url: string;
   headers: {
     [key: string]: string;
   };
+}
+
+export interface KeyboardEvent {
+  key: string;
 }
