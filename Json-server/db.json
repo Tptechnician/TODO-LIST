@@ -5,16 +5,6 @@
       "name": "admin",
       "email": "admin@email.ru",
       "password": "123456"
-    },
-    {
-      "name": "павел",
-      "password": "1",
-      "id": 2
-    },
-    {
-      "name": "анастасия",
-      "password": "1",
-      "id": 3
     }
   ],
   "todos": [
@@ -29,72 +19,6 @@
       "title": "Задача анастасия",
       "id": "2",
       "autor": "admin"
-    },
-    {
-      "made": false,
-      "title": "1",
-      "autor": "павел",
-      "id": "qLEwq_-"
-    },
-    {
-      "made": false,
-      "title": "2",
-      "autor": "павел",
-      "id": "0JByuPB"
-    },
-    {
-      "made": false,
-      "title": "3",
-      "autor": "павел",
-      "id": "oTmPwIR"
-    },
-    {
-      "made": false,
-      "title": "4",
-      "autor": "павел",
-      "id": "GMLTLxU"
-    },
-    {
-      "made": false,
-      "title": "5",
-      "autor": "павел",
-      "id": "ZpgbPPI"
-    },
-    {
-      "made": true,
-      "title": "11",
-      "autor": "анастасия",
-      "id": "3_N0no9"
-    },
-    {
-      "made": false,
-      "title": "22",
-      "autor": "анастасия",
-      "id": "m03xI3K"
-    },
-    {
-      "made": true,
-      "title": "33",
-      "autor": "анастасия",
-      "id": "aFNPbp9"
-    },
-    {
-      "made": false,
-      "title": "6",
-      "autor": "павел",
-      "id": "3LeLFzx"
-    },
-    {
-      "made": false,
-      "title": "7",
-      "autor": "павел",
-      "id": "gtJe52E"
-    },
-    {
-      "made": false,
-      "title": "8",
-      "autor": "павел",
-      "id": "ABbYa_p"
     }
   ]
 }
